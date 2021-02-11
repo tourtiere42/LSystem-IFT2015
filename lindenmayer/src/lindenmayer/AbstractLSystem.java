@@ -23,7 +23,8 @@ import java.awt.geom.Rectangle2D;
  * 
  * <p><strong>Setting up the L-system. </strong>
  * The implementation builds its data structures 
- * by calling {@link #addSymbol}, {@link #addRule}, {@link #setAxiom} and {@link #setAction}. 
+ * by calling {@link #addSymbol}, {@link #addRule}, 
+ * {@link #setAxiom} and {@link #setAction}. 
  * 
  * <p><strong>Using the L-system. </strong>
  * The implementation provides access to symbols as instances of {@link Symbol}, and 
@@ -92,9 +93,9 @@ public abstract class AbstractLSystem
      * Executes the action corresponding to a symbol (specified by {@link #setAction}) on a given turtle.  
      * 
      * @param turtle used for executing the action
-     * @param sym symbol that needs to be executed 
+     * @param seq sequence that needs to be executed 
      */
-    public abstract void tell(Turtle turtle, Symbol sym);
+    public abstract void tell(Turtle turtle, Symbol.Seq seq);
 
     /**
      * Calculates the result of multiple rounds of rewriting. Symbols with no reriting rules are simply copied 
