@@ -90,7 +90,7 @@ public abstract class AbstractLSystem
      */
     public abstract Symbol.Seq rewrite(Symbol sym);
     /**
-     * Executes the action corresponding to a symbol (specified by {@link #setAction}) on a given turtle.  
+     * Executes the action corresponding to a sequence (actions for Symbols specified by {@link #setAction}) on a given turtle.  
      * 
      * @param turtle used for executing the action
      * @param seq sequence that needs to be executed 
