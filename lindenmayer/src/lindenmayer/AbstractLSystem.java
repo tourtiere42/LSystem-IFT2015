@@ -90,12 +90,12 @@ public abstract class AbstractLSystem
      */
     public abstract Symbol.Seq rewrite(Symbol sym);
     /**
-     * Executes the action corresponding to a sequence (actions for Symbols specified by {@link #setAction}) on a given turtle.  
+     * Executes the action corresponding to Symbol (action specified by {@link #setAction}) on a given turtle.  
      * 
      * @param turtle used for executing the action
-     * @param seq sequence that needs to be executed 
+     * @param sym the symbol that needs to be executed 
      */
-    public abstract void tell(Turtle turtle, Symbol.Seq seq);
+    public abstract void tell(Turtle turtle, Symbol sym );
 
     /**
      * Calculates the result of multiple rounds of rewriting. Symbols with no reriting rules are simply copied 
@@ -108,14 +108,15 @@ public abstract class AbstractLSystem
     public abstract Symbol.Seq applyRules(Symbol.Seq seq, int n);
     
     /**
-     * Draws the result after multiple rounds of rewriting, starting from a single symbol. 
+     * Draws the result after multiple rounds of rewriting, starting from an 
+     * arbitrary sequence (the axiom). 
      * Symbols with no rewriting rules are simply copied 
      * at each round. 
      * 
      * @param turtle turtle used for drawing
-     * @param sym the starting sequence in round 0: a single symbol
+     * @param seq the starting sequence in round 0
      * @param rounds number of rounds
      * @return bounding box (minimal rectangle covering all visited turtle positions)
      */
-    public abstract Rectangle2D tell(Turtle turtle, Symbol sym, int rounds);
+    public abstract Rectangle2D tell(Turtle turtle, Symbol.Seq seq, int rounds);
 }
